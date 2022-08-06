@@ -21,7 +21,7 @@ Users are able to:
 - See hover states for all interactive elements on the page
 - See a live countdown timer that ticks down every second
 
-## Bonus
+## Ensuring countdown is always active
 
 To ensure the countdown timer always displays an active countdown, I've set up the code so the launch deadline will always be 9 days away from the day/time the countdown timer website is opened.
 
