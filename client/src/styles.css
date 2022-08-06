@@ -1,0 +1,260 @@
+/* import typography */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+
+:root {
+  /* Colors */
+  --grayishBlue: hsl(237, 18%, 59%);
+  --softRed: hsl(345, 95%, 68%);
+  --white: hsl(0, 0%, 100%);
+  --destatBlue: hsl(236, 21%, 26%);
+  --darkBlue: hsl(235, 16%, 14%);
+  --blueBlack: hsl(234, 17%, 12%);
+  --bg: hsl(268, 22%, 13%);
+  --cardDivider: hsl(0, 0%, 59%);
+
+  /* Fonts */
+  --mobileHeader: 1.125rem; /*18px*/
+  --mobileNumbers: 2.25rem; /*36px*/
+  --mobileLabels: 0.4375rem; /*7px*/
+  --desktopHeader: 1.375rem; /*22px*/
+  --desktopNumbers: 5rem; /*80px*/
+  --desktopLabels: 0.875rem; /*14px*/
+
+  /* Typography */
+  --typeRedHat: "Red Hat Text", sans-serif;
+
+  /* The Rest */
+  --maxWidth: 90rem;
+  --borderRadius: 0.5rem;
+  --cardRadius: 0.25rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--typeRedHat);
+  background: url("./images/bg-stars.svg"), var(--bg);
+  background-position: top;
+  background-size: auto;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}
+
+.section-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 9.2rem 1.5rem 8rem;
+}
+
+.title {
+  color: var(--white);
+  font-size: var(--mobileHeader);
+  letter-spacing: 0.38rem;
+  text-transform: uppercase;
+  text-align: center;
+  width: 20.44rem;
+  margin-bottom: 3.75rem;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10.75rem;
+}
+
+.number-card {
+  text-align: center;
+}
+
+.number-card:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.shadow-container {
+  width: 4.375rem;
+  height: 4.4375rem;
+  background-color: var(--blueBlack);
+  border-radius: var(--borderRadius);
+  text-align: center;
+  position: relative;
+  margin-bottom: 0.6875rem;
+}
+
+.card-background {
+  position: relative;
+}
+
+.number {
+  color: var(--softRed);
+  font-size: var(--mobileNumbers);
+  letter-spacing: -0.06rem;
+  line-height: 4rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.card-bg-top,
+.card-bg-bottom {
+  width: 4.375rem;
+  height: 2.0625rem;
+  background-color: var(--destatBlue);
+}
+
+.card-bg-top {
+  border-top-left-radius: var(--cardRadius);
+  border-top-right-radius: var(--cardRadius);
+  background: radial-gradient(3px at bottom left, #0000 100%, var(--destatBlue))
+      bottom left/51% 100% no-repeat,
+    radial-gradient(3px at bottom right, #0000 100%, var(--destatBlue)) bottom
+      right/51% 100% no-repeat;
+}
+.card-bg-bottom {
+  border-bottom-left-radius: var(--cardRadius);
+  border-bottom-right-radius: var(--cardRadius);
+  background: radial-gradient(3px at top left, #0000 100%, var(--destatBlue))
+      top left/51% 100% no-repeat,
+    radial-gradient(3px at top right, #0000 100%, var(--destatBlue)) top
+      right/51% 100% no-repeat;
+}
+
+.card-divider {
+  background-color: var(--darkBlue);
+  border: none;
+  width: 4.68rem;
+  height: 0.03rem;
+  margin: 0 auto;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 49%;
+  bottom: 53.19%;
+  mix-blend-mode: normal;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.label {
+  color: var(--grayishBlue);
+  font-size: var(--mobileLabels);
+  letter-spacing: 0.19rem;
+  text-transform: uppercase;
+}
+
+.footer {
+  background-image: url("./images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-position: 81%;
+  background-size: cover;
+  height: 12.5rem;
+  width: 100vw;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.icon-container {
+  display: flex;
+  width: 8.5rem;
+  margin: 8rem auto;
+}
+
+.icon-container a:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.icon {
+  transition: fill 300ms ease-in-out;
+}
+
+.icon:hover path {
+  fill: var(--softRed);
+}
+
+@media screen and (min-width: 37.5rem) {
+  .section-center {
+    margin: 8.875rem 23.5rem 8rem;
+  }
+  .title {
+    font-size: var(--desktopHeader);
+    letter-spacing: 0.47rem;
+    width: 27.5rem;
+    margin-bottom: 5.5rem;
+  }
+
+  .countdown {
+    margin-bottom: 9.5rem;
+  }
+
+  .number-card:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  .shadow-container {
+    width: 9.25rem;
+    height: 9.375rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .number {
+    font-size: var(--desktopNumbers);
+    letter-spacing: -0.15rem;
+    line-height: 4.4375rem;
+    top: 2.1875rem;
+  }
+
+  .card-bg-top,
+  .card-bg-bottom {
+    width: 9.25rem;
+    height: 4.375rem;
+  }
+
+  .card-bg-top {
+    background: radial-gradient(
+          6px at bottom left,
+          #0000 100%,
+          var(--destatBlue)
+        )
+        bottom left/51% 100% no-repeat,
+      radial-gradient(6px at bottom right, #0000 100%, var(--destatBlue)) bottom
+        right/51% 100% no-repeat;
+  }
+  .card-bg-bottom {
+    background: radial-gradient(6px at top left, #0000 100%, var(--destatBlue))
+        top left/51% 100% no-repeat,
+      radial-gradient(6px at top right, #0000 100%, var(--destatBlue)) top
+        right/51% 100% no-repeat;
+  }
+
+  .card-divider {
+    width: 9.25rem;
+    height: 0.0625rem;
+  }
+
+  .label {
+    letter-spacing: 0.37rem;
+    font-size: var(--desktopLabels);
+  }
+
+  .icon-container {
+    display: flex;
+    width: 8.5rem;
+    margin: 6.25rem auto;
+  }
+}
+
+@media screen and (min-width: 93.75rem) {
+  .footer {
+    height: 17.5rem;
+  }
+} ;
